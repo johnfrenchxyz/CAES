@@ -1,15 +1,10 @@
 #CAES To Do List
 
+This is the official repository for the UGA College of Agricultural & Environmental Sciences.  
 
-##In Progress:
+##CAES Components
+[View the Index of CAES Components](https://johnfrenchxyz.github.io/CAES/components/)
 
-- **Map Component:** Padding issue between the map component and the contact info component. Test both.
-- **UGA Section & People Menu:** Finish new top section desing in preparation for UGA branding update.
-- **Site Search:** Expanding Search needs to autofocus on safari mobile.
+##Bug/Issue Submission:
 
-##Recently Completed:
-
-- **Panel Component:** Removed double border caused by conflict with AEM class.
-- **Panel Component:** Added bottom padding that was causing the panels to stack on each other.
-- **Panel Component:** Centered the image when it was smaller than the container and added a slightly gray background to set it apart from the other content.
-- **Button Component:** In AEM's rich text box, you can now preview the buttons before you finish editing them. 
+To submit a bug or an issue, click the "Issues" button in the main navigation at the top of the page.  Then click "New Issue" and enter your bug or issue there. Please assign, label, and document the problem accordingly.  Be sure you are able to receive email updates as well to see when the issue changes.
