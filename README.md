@@ -1,6 +1,6 @@
-#CAES To Do List
+#UGA CAES Templates & Components
 
-This is the official repository for the UGA College of Agricultural & Environmental Sciences.  
+This is the official repository for the UGA College of Agricultural & Environmental Sciences main website, sub-sites, and components.
 
 ##CAES Templates:
 * [View the CAES Homepage Template](https://johnfrenchxyz.github.io/CAES/)
