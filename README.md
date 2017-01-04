@@ -2,7 +2,18 @@
 
 This is the official repository for the UGA College of Agricultural & Environmental Sciences.  
 
-##CAES Components
+##CAES Templates:
+  -[View the CAES Homepage Template](https://johnfrenchxyz.github.io/CAES/)
+  -[View the CAES News Template](https://johnfrenchxyz.github.io/CAES/news-template.html)
+  -[View the CAES News Story Template](https://johnfrenchxyz.github.io/CAES/news-story-template.html)
+  -[View the CAES Newswire Template](https://johnfrenchxyz.github.io/CAES/newswire-template.html)
+  -[View the CAES Newswire Template](https://johnfrenchxyz.github.io/CAES/newswire-story-template.html)
+
+##CAES Subsite Templates:
+  -[View the CAES Subsite Template](https://johnfrenchxyz.github.io/CAES/subsite-template.html)
+  -[View the CAES Subsite Template (with side-nav)](https://johnfrenchxyz.github.io/CAES/subsite-template-with-subnav.html)
+
+##CAES Components:
 [View the Index of CAES Components](https://johnfrenchxyz.github.io/CAES/components/)
 
 ##Bug/Issue Submission:
