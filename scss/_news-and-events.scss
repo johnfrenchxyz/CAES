@@ -1,0 +1,349 @@
+/*
+    CAES News & Events Template
+*/
+
+// Header Mixin
+@mixin newsAndEventsHeader($background) {
+    background: $background;
+    padding: .5em 1em 2em 1em;
+    margin: 0 0 2em 0;
+    position: relative;
+    h2 {
+        color: white;
+        font-size: 2.5rem;
+        padding: .5em 0 0em 0;
+        margin: 0;
+        @include breakpoint(small only) {
+            font-size: 1.5em;
+        }
+    }
+    // Arrow
+    &:after {
+        top: 100%;
+    	left: 3em;
+    	border: solid transparent;
+    	content: " ";
+    	height: 0;
+    	width: 0;
+    	position: absolute;
+    	pointer-events: none;
+    	// border-color: rgba(136, 183, 213, 0);
+    	border-top-color: $background;
+    	border-width: 30px;
+    	margin-left: -30px;
+        @include breakpoint(small only) {
+            border-width: 20px;
+        	margin-left: -20px;
+        }
+    }
+}
+
+.news-header {
+    @include newsAndEventsHeader($caes-red);
+}
+
+.featured-header {
+    margin: 0;
+    background: $caes-red;
+    padding: 1em .5em .65em 1em;
+    h3 {
+        color: $white;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+    }
+}
+
+.featured-slider {
+    margin-top: 0;
+    border-left: solid 1px $caes-light-gray;
+    border-right: solid 1px $caes-light-gray;
+    border-bottom: solid 1px $caes-light-gray;
+    .orbit-previous, .orbit-next {
+        background: $caes-dark-gray;
+        padding-bottom: 1.3em;
+        opacity: .5;
+        &:hover {
+            background: darken($caes-dark-gray, 10%);
+        }
+    }
+    .text-slide {
+        background: $white;
+        width: 40%;
+        height: 100%;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include breakpoint(medium down) {
+            min-height: 30%;
+            max-height: 100%;
+            width: 100%;
+            position: absolute;
+            opacity: .8;
+            top: 0;
+            left: 0;
+        }
+        .story-info {
+            margin-left: 4em;
+            margin: 0 1em 0 4em;
+        }
+    }
+    .image-slide {
+        width: 60%;
+        height: 100%;
+        float: right;
+        @include breakpoint(medium down) {
+            width: 100%;
+            .story-info {
+                margin: 0 2em 0 4em !important;
+            }
+        }
+        img {
+            min-height: 100%;
+        }
+    }
+}
+
+.newswire-button {
+    width: 100%;
+    min-height: 56px;
+    background: $caes-newswire-color;
+    color: $white;
+    font-weight: bold;
+    font-size: .9rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding-top: 17px;
+    transition: background 200ms ease;
+    &:hover {
+        background: darken($caes-newswire-color, 10%);
+        color: $white;
+    }
+}
+
+// Filter / For the Media Coloring
+.for-the-media {
+   .component-title { @include component-title( $body-font-color, $white ); }
+   ul {
+      list-style: none;
+   }
+}
+
+// Accordion Filter Styles
+.filter-container {
+    .top-label {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    .material-icons {
+        float: right;
+        margin: .25em .5em 0 0;
+    }
+}
+
+.filter-hide {
+    display: none !important;
+}
+
+// Media Newswire Template
+//------------------------
+.newswire-header {
+    @include newsAndEventsHeader($caes-newswire-color);
+    a {
+        text-decoration: none;
+    }
+}
+
+.about-newswire {
+    p {
+        margin: 1em;
+    }
+}
+
+// Media Kit
+.media-kit {
+    overflow: auto;
+    img {
+        float: right;
+        max-width: 300px;
+        margin-left: 2em;
+        @include breakpoint(medium down) {
+            float: none;
+            margin: 0;
+        }
+    }
+    .media-kit-info {
+        text-align: left;
+        ul li {
+            // list-style: none;
+        }
+    }
+}
+
+// Newswire Plain List
+.newswire-plain-list-container {
+   margin-bottom: 3em;
+
+
+   @include clear;
+
+   .plain-list-item {
+      display: block;
+      margin-bottom: 1em;
+      clear: both;
+      @include caes-list-style;
+      .subtitle {
+         max-width: 90%;
+      }
+      .description {
+         display: flex;
+         @include link-underline;
+      }
+      img { float: left; max-width: 200px; height: auto; padding-right: 1em; margin-bottom: 1em; }
+   }
+
+   // Read More Section
+   hr { border-bottom: 1px solid #d6d6d6; }
+   .read-more { margin-left: 1em; }
+}
+
+// Pagination Icon Fixes
+.pagination-previous a::before, .pagination-previous.disabled::before {
+    content: '«';
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.pagination .ellipsis::after {
+    content: '…';
+    padding: 0.1875rem 0.625rem;
+    color: #0a0a0a;
+}
+
+.pagination-next a::after, .pagination-next.disabled::after {
+    content: '»';
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+
+
+// CAES News Story Page Template & Styles
+//---------------------------------------
+.header-story-date, .header-author {
+    display: block;
+    font-weight: bold;
+    font-size: .7rem;
+    color: $white;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+.story-title {
+    margin: 0;
+    color: $white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: 'Roboto Slab', serif;
+}
+
+// Image Container
+.story-image-container {
+    background: $light-gray;
+    padding: 1em;
+    .image-caption {
+        display: block;
+        font-size: .8rem;
+    }
+    .thumbnail {
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        margin: .5em;
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+}
+
+// Social Media Icons (for story sharing)
+.story-sharing {
+   @include breakpoint(medium up) {
+      margin-top: 5em;
+   }
+   margin-top: 1em;
+   margin-bottom: 1em;
+   padding-top: .5em;
+   text-align: center;
+   background: $body-font-color;
+   color: $white;
+   span {
+      font-weight: bold;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+   }
+   a {
+      color: $white;
+      transition: 250ms ease;
+      &:hover {
+         color: darken($white, 20%);
+      }
+   }
+}
+
+.subtitle {
+   font-weight: 500;
+   // color: $dark-gray;
+   text-transform: uppercase;
+   font-size: rem-calc(12);
+   display: block;
+}
+
+.author {
+   font-size: rem-calc(18);
+   font-weight: bold;
+}
+
+
+// Author & Expert Pages
+//----------------------
+.writer-detail {
+    overflow: hidden;
+}
+
+// Pagination
+//-----------
+.pagination-next a::after, .pagination-next.disabled::after {
+    content: '\00bb';
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.pagination-previous a::before, .pagination-previous.disabled::before {
+    content: '\00ab';
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.pagination .ellipsis::after {
+    content: '...';
+    padding: 0.1875rem 0.625rem;
+    color: #0a0a0a;
+}
+
+
+// Image Component
+//----------------
+.float-center {
+    text-align: center;
+}
+.float-left {
+    text-align: left;
+}
+.float-right {
+    text-align: right;
+}

@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CAES News Story Page</title>
+   <link rel="stylesheet" href="../css/app.css">
+</head>
+
+<body>
+
+   <div class="row">
+      <div class="large-12 columns">
+         <h1>CAES News Story Page:</h1>
+         <p>This template component fits inside the larger CAES template and automatically forms a page for each given story.  The page contains the full article, image, ability to share the story to social media, and broader media resources.  Below the story, a feed of related articles would also show up when the component is connected to the database.  Currently in the mockup, they are only static examples.</p>
+         <hr />
+      </div>
+   </div>
+
+   <div class="news-story-page" itemscope itemtype="https://schema.org/NewsArticle">
+      <div class="row">
+         <div class="large-6 medium-8 columns">
+            <!-- Story Title -->
+            <h2 itemprop="headline">Beekeeping Basics</h2>
+            <!-- Story Author -->
+            <span class="subtitle tagline">Story By John Doe</span>
+            <!-- Story Image -->
+            <a data-open="storyImage">
+               <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Honeycomb_15_03_2012.jpg" alt="Honeycomb" itemtype="image" />
+            </a>
+            <!-- Story Image Lightbox -->
+            <div class="reveal large news-lightbox" id="storyImage" aria-labelledby="storyImage" data-reveal>
+               <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Honeycomb_15_03_2012.jpg" alt="Honeycomb" />
+               <p class="description" style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+               <a href="#" download="https://upload.wikimedia.org/wikipedia/commons/3/3d/Honeycomb_15_03_2012.jpg" class="button img-download"><i class="fi-download"></i> Download Image</a>
+               <button class="close-button" data-close aria-label="Close Accessible Modal" type="button">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <!-- Story Text / Content -->
+            <div class="description" itemprop="description">
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <!-- Subtitle / Publish Information -->
+            <meta itemprop="datePublished" content="2009-05-08" />
+            <span class="subtitle">Published 05/08/1931 by <span itemprop="publisher">CAES NEWS</span></span>
+            <!-- Author Information -->
+            <div class="author">
+               Author: <a itemprop="author">Merrit Melancon</a> ( <a><i class="fi-telephone"></i></a> <a><i class="fi-mail"></i></a> )
+            </div>
+
+
+         </div>
+         <div class="large-3 medium-4 columns end">
+            <!-- Story Sharing -->
+            <div class="story-sharing">
+               <span>Share Story:</span>
+               <!-- Social Media Icons -->
+               <ul class="social-media-icons">
+                  <li title="facebook">
+                     <a href="https://www.facebook.com/sharer/sharer.php?u=http://johnfrenchxyz.github.io/UGA/CAES/components/news-story-page.html" onclick="return !window.open(this.href, 'Share CAES News', 'width=500,height=500')"
+    target="_blank">
+                        <i class="fi-social-facebook"></i>
+                     </a>
+                  </li>
+                  <li title="twitter">
+                     <a href="https://twitter.com/intent/tweet?text=Ridiculously%20Responsive%20Social%20Sharing%20Buttons%3A%20http%3A%2F%2Fjohnfrenchxyz.github.io/UGA/CAES/components/news-story-page.html" onclick="return !window.open(this.href, 'Share CAES News', 'width=500,height=500')"
+    target="_blank">
+                        <i class="fi-social-twitter"></i>
+                     </a>
+                  </li>
+                  <li title="email">
+                     <a href="mailto:?subject=New%20story%20from%20CAES%20news&body=http%3A%2F%2Fjohnfrenchxyz.github.io/UGA/CAES/components/news-story-page.html">
+                        <i class="fi-mail"></i>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+            <!-- For the Media -->
+            <div class="plain-list-container for-the-media">
+               <div class="component-title">
+                  For the Media
+               </div>
+               <ul class="filters">
+                  <li><a class="filter-control">Audio News</a></li>
+                  <li><a class="filter-control">Image Database</a></li>
+                  <li><a class="filter-control">Infographics</a></li>
+                  <li><a class="filter-control">Sources</a></li>
+                  <li><a class="filter-control">Special Sections</a></li>
+                  <li><a class="filter-control">Videos</a></li>
+            </div>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="large-12 columns">
+
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="large-12 columns">
+            <!-- Related Stories -->
+            <hr />
+            <div class="news-list">
+               <!-- Tiled List Component Title -->
+               <div class="component-title">
+                  Related Stories
+               </div>
+               <!-- Tiled List Container -->
+               <div class="tiled-list-container">
+
+                  <!-- Tiled List Item -->
+                  <div class="tiled-list-pad">
+                     <div class="tiled-list-item NewsArticle" itemscope itemtype="https://schema.org/NewsArticle">
+                        <!-- Image -->
+                        <img itemtype="image" src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Honeycomb_15_03_2012.jpg" />
+                        <!-- Title -->
+                        <a class="title" itemprop="headline">Beekeeping Basics</a>
+                        <!-- Description / Summary -->
+                        <p class="description" itemprop="description">Aliquam aliquam posuere nisl nec molestie. Fusce dapibus finibus mi, elementum commodo diam fermentum et. Aliquam ligula mauris, lacinia eu mi et, convallis laoreet mauris. Suspendisse pretium justo est. Nulla ipsum odio.</p>
+                        <span class="subtitle">Author: <span itemprop="author">John Doe</span></span>
+                        <!-- Subtitle / Publish Information -->
+                        <meta itemprop="datePublished" content="2009-05-08" />
+                        <span class="subtitle">Published 05/08/1931 by <span itemprop="publisher">UGA FACES</span></span>
+                     </div>
+                  </div>
+
+                  <!-- Tiled List Item -->
+                  <div class="tiled-list-pad">
+                     <div class="tiled-list-item NewsArticle" itemscope itemtype="https://schema.org/NewsArticle">
+                        <!-- Image -->
+                        <img itemtype="image" src="http://apps.caes.uga.edu/gafaces/Multimedia/Images/THREE_VERSION_IMAGE_2266/programassistantsmobilemarket.jpg" />
+                        <!-- Title -->
+                        <a class="title" itemprop="headline">Metro Mobile Markets</a>
+                        <!-- Description / Summary -->
+                        <p class="description" itemprop="description">Aliquam aliquam posuere nisl nec molestie. Fusce dapibus finibus mi, elementum commodo diam fermentum et. Aliquam ligula mauris, lacinia eu mi et, convallis laoreet mauris. Suspendisse pretium justo est. Nulla ipsum odio.</p>
+                        <span class="subtitle">Author: <span itemprop="author">John Doe</span></span>
+                        <!-- Subtitle / Publish Information -->
+                        <meta itemprop="datePublished" content="2009-05-08" />
+                        <span class="subtitle">Published 05/08/1931 by <span itemprop="publisher">UGA FACES</span></span>
+                     </div>
+                  </div>
+
+                  <!-- Tiled List Item -->
+                  <div class="tiled-list-pad">
+                     <div class="tiled-list-item NewsArticle" itemscope itemtype="https://schema.org/NewsArticle">
+                        <!-- Image -->
+                        <!-- <img itemtype="image" src="https://pixabay.com/static/uploads/photo/2014/11/14/16/39/honeycomb-530987_960_720.jpg" /> -->
+                        <!-- Title -->
+                        <a class="title" itemprop="headline">Forrestry's Economic Impact</a>
+                        <!-- Description / Summary -->
+                        <p class="description" itemprop="description">Aliquam aliquam posuere nisl nec molestie. Fusce dapibus finibus mi, elementum commodo diam fermentum et. Aliquam ligula mauris, lacinia eu mi et, convallis laoreet mauris. Suspendisse pretium justo est. Nulla ipsum odio.</p>
+                        <span class="subtitle">Author: <span itemprop="author">John Doe</span></span>
+                        <!-- Subtitle / Publish Information -->
+                        <meta itemprop="datePublished" content="2009-05-08" />
+                        <span class="subtitle">Published 05/08/1931 by <span itemprop="publisher">UGA FACES</span></span>
+                     </div>
+                  </div>
+
+                  <div class="tiled-list-pad">
+                     <div class="tiled-list-item">
+                        <a href="#" class="button large expanded">Read More News</a>
+                     </div>
+                  </div>
+
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+
+   <script src="../bower_components/jquery/dist/jquery.js"></script>
+   <script src="../bower_components/what-input/what-input.js"></script>
+   <script src="../bower_components/foundation-sites/dist/foundation.js"></script>
+   <script src="../js/app.js"></script>
+   <!-- For Expanding Search -->
+   <script src="../js/search/classie.js"></script>
+   <script src="../js/search/uisearch.js"></script>
+   <script>
+      new UISearch(document.getElementById('sb-search'));
+   </script>
+</body>
+
+</html>

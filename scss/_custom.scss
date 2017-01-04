@@ -1,0 +1,582 @@
+$caes-red: #BA0C2F;
+$caes-gray: #777;                   // Medium Gray
+$caes-green: #339966;     // Green (Used for "Extension" Section)
+$caes-yellow: #ffa02f;              // Yellow (Used for "Research" Section)
+$caes-blue: #0083aa;                // Blue (Used for the "Academics Section")
+$caes-dark-gray: #3e3e3e;
+$medium-gray: #cacaca;
+$caes-light-gray: lighten($medium-gray, 10%);
+$caes-newswire-color: #4b4b4b;
+$footer-bg-color: lighten($light-gray, 5%);
+
+// Typography
+// ----------
+
+// Roboto ()
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+// font-family: 'Roboto', sans-serif;
+
+// Nunito (Avenir Alternative)
+// @import url(https://fonts.googleapis.com/css?family=Nunito:300,500);
+// font-family: 'Nunito', sans-serif;
+
+// Montserrat
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+$montserrat: 'Montserrat', 'Roboto', sans-serif;
+
+// Roboto Slab
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+// font-family: 'Roboto Slab', serif;
+
+// Foundation Icons
+@import "../fonts/foundation-icons/foundation-icons.css";
+
+// Global Mixins
+// -------------
+@mixin headerLinks() {
+   font-size: rem-calc(14);
+   font-weight: bold;
+   a {
+      font-size: rem-calc(14);
+      font-weight: bold;
+   }
+}
+
+// Link Underline Mixin
+//---------------------
+@mixin link-underline {
+    a {
+        text-decoration: underline;
+    }
+    a.button {
+        text-decoration: none;
+    }
+    .button {
+        text-decoration: none;
+    }
+    nav a {
+        text-decoration: none;
+    }
+    header a {
+        text-decoration: none;
+    }
+}
+
+@include link-underline;
+
+
+main {
+    a {
+        text-decoration: underline;
+    }
+    a.button {
+        text-decoration: none;
+    }
+    .button {
+        text-decoration: none;
+    }
+}
+
+// Headings
+// --------
+h1, h3, h4, h5, h6 { font-family: 'Roboto Slab', serif; }
+h2 {
+   font-family: 'Roboto', sans-serif;
+   text-transform: uppercase;
+   font-weight: 700;
+   margin-top: .5em;
+}
+
+// Button Styles
+//--------------
+.button {
+   font-weight: bold;
+}
+
+// UGA Branding
+// ------------
+.uga-button {
+   @include button-style($caes-red, darken($caes-red, 10%), $white);
+   height: 56px;
+   margin-bottom: -56px;
+   // Typography
+   @include headerLinks;
+   text-transform: uppercase;
+   text-align: left;
+   z-index: -1;
+   // UGA Icon
+   img { width: 18px;
+      padding-bottom: 15px;
+      margin-right: 3px;
+   }
+   #ugaText {
+      position: absolute;
+      top: 0;
+      margin-top: 1.5em;
+      margin-left: 2em;
+   }
+   &:hover {
+      // border-bottom: solid 5px darken($caes-red, 15%);
+      background: darken($caes-red, 10%);
+      transition: all 250ms ease;
+   }
+
+   // Small Screen Width
+   @include breakpoint(small) {
+      width: 30%;
+      min-width: 80px;
+   }
+   // Medium Screen Width
+   @include breakpoint(medium) {
+      width: 40%;
+   }
+   // Large Screen Width
+   @include breakpoint(large) {
+      width: 25%;
+   }
+}
+
+
+// Site Search & People Menu
+// -------------------------
+
+// Search & People Container
+.search-and-people-container {
+   float: right;
+   position: relative;
+   width: 100%;
+   @include breakpoint(small only) {
+      background: $caes-red;
+   }
+}
+
+// People Container
+// .people-menu {
+//    // Hide From 720px Down:
+//    @media screen and (max-width: 720px) {
+//    display: none !important;
+//    }
+//    float: right;
+//    margin-right: 70px;
+//    position: relative;
+//    height: 56px;
+//    line-height: 56px;
+//    margin-bottom: -56px;
+//    ul li {
+//       padding-top: 10px;
+//       padding-left: 0px;
+//       padding-right: 0px;
+//       font-size: rem-calc(14);
+//       a {
+//          color: $body-font-color;
+//          font-weight: bold;
+//          padding-right: .3em !important;
+//          &:hover { text-decoration: underline; }
+//       }
+//    }
+// }
+
+// Search Container
+.sb-search {
+	position: relative;
+	width: 0%;
+	min-width: 56px;
+	height: 56px;
+	float: right;
+	overflow: hidden;
+	-webkit-transition: width 0.3s;
+	-moz-transition: width 0.3s;
+	transition: width 0.3s;
+	-webkit-backface-visibility: hidden;
+   z-index: 120;
+}
+
+// Search Input Field
+.sb-search-input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	outline: none;
+	background: $caes-red;
+	width: 100%;
+	height: 56px;
+	margin: 0;
+	z-index: 10;
+	padding: 20px 65px 20px 20px;
+	font-family: inherit;
+	font-size: 20px;
+	color: $white;
+
+   // Placeholder Text
+   $search-placeholder-color: $white;
+   &::-webkit-input-placeholder { color: $search-placeholder-color; }
+   &:-moz-placeholder { color: $search-placeholder-color; }
+   &::-moz-placeholder { color: $search-placeholder-color; }
+   &:-ms-input-placeholder { color: $search-placeholder-color; }
+
+}
+
+#search { background: $caes-red; border: solid 1px $caes-red; }
+
+.sb-icon-search,
+.sb-search-submit  {
+	width: 56px;
+	height: 56px;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	line-height: 56px;
+	text-align: center;
+	cursor: pointer;
+   &:hover {
+      background: darken($caes-red, 10%);
+      transition: all 250ms ease;
+   }
+}
+
+.sb-search-submit {
+	background: #fff; /* IE needs this */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+    filter: alpha(opacity=0); /* IE 5-7 */
+    opacity: 0;
+	color: transparent;
+	border: none;
+	outline: none;
+	z-index: -1;
+}
+
+.sb-icon-search {
+	color: #fff;
+	background: $caes-red;
+	z-index: 90;
+	font-size: 22px;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Open state */
+.sb-search.sb-search-open,
+.no-js .sb-search {
+	width: 100%;
+   background: $caes-red;
+   color: $white;
+}
+
+.sb-search.sb-search-open .sb-icon-search,
+.no-js .sb-search .sb-icon-search {
+	background: $caes-red;
+	color: #fff;
+	z-index: 11;
+}
+
+.sb-search.sb-search-open .sb-search-submit,
+.no-js .sb-search .sb-search-submit {
+	z-index: 90;
+}
+
+
+
+// CAES Branding
+// -------------
+
+#caesBranding {
+   margin-bottom: .5em;
+   a { color: #3e3e3e; }
+   font-family: 'Roboto', sans-serif;
+   font-weight: 700;
+   line-height: 1;
+   margin-top: 20px;
+   color: #3e3e3e;
+
+   // Large screen left margin:
+   @include breakpoint(large up) {
+      padding-left: .5em;
+   }
+
+   span {
+      font-weight: 400;
+      font-size: rem-calc(16);
+      text-transform: uppercase;
+      display: block;
+      // Small Screen Font Reduction
+      @include breakpoint(small only) {
+         font-size: rem-calc(12);
+      }
+   }
+}
+
+
+// Main Navigation
+// ---------------
+
+$nav-bg-color: darken($dark-gray, 30%);
+$nav-link-color: $light-gray;
+$nav-arrow-color: $nav-link-color;
+
+#mainNav {
+   background: $nav-bg-color;
+   height: 100%;
+   line-height: 56px;
+   @include breakpoint(small only) {
+      li ul { overflow: scroll !important; }
+   }
+
+   li {
+      background: $nav-bg-color;
+      @include breakpoint(medium up) {
+          height: 56px;
+          line-height: 56px;
+      }
+      @include breakpoint(small only) {
+         padding-top: .5em;
+         padding-bottom: .5em;
+      }
+      z-index: 100;
+
+      &:hover { background: lighten($nav-bg-color, 10%); }
+
+      a {
+         color: $nav-link-color;
+         font-size: rem-calc(14);
+         font-weight: bold;
+         transition: 250ms ease;
+         @media (max-width: 750px) {
+            font-size: rem-calc(12);
+         }
+      }
+   }
+
+   // Drilldown arrow styling
+   .is-drilldown-submenu-parent > a::after {
+      border-color: transparent transparent transparent $nav-arrow-color;
+   }
+
+   // Dropdown Submenu li container
+   ul {
+      @include breakpoint(medium up) {
+         margin-top: 36px;
+         height: 56px;
+         a {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+         }
+      }
+      @include breakpoint(small only) {
+         margin-top: 0px;
+      }
+      background: $nav-bg-color;
+      border: none;
+   }
+   // Dropdown Submenus li
+   .is-dropdown-submenu-item {
+      background: $nav-bg-color;
+      padding: .2em;
+   }
+
+}
+
+// Small Screen Menu Bar
+.title-bar {
+   // Menu Bar
+   background: $nav-bg-color;
+   height: 56px;
+   line-height: 56px;
+   // Menu Text
+   .title-bar-title { @include headerLinks; vertical-align: middle; margin-top: -17px; }
+   // Hamburger Icon
+   .menu-icon {
+       vertical-align: middle; margin-top: -15px;
+       &::after { box-shadow: 0 6px 0 #fefefe, 0 12px 0 #fefefe; }
+       &:hover {
+           &::after { box-shadow: 0 6px 0 #fefefe, 0 12px 0 #fefefe; }
+       }
+   }
+}
+
+// Fix for dropdown direction
+@include breakpoint(medium up) {
+   .medium-horizontal{
+      .is-dropdown-submenu{
+         top: 20px;
+         left: 0;
+      }
+      .is-dropdown-submenu-parent.opens-left .is-dropdown-submenu{
+         right: 0
+      }
+   }
+}
+
+// Fix for arrow direction
+@include breakpoint(medium up) {
+   .medium-horizontal{
+      .is-dropdown-submenu-parent.is-right-arrow > a::after {
+         border-width: 5px;
+         margin-top: 6px;
+         border-style: solid solid inset inset;
+         border-color: $nav-arrow-color transparent transparent;
+      }
+   }
+}
+
+// Fix for arrow direction
+@include breakpoint(medium down) {
+   .medium-horizontal{
+      .is-dropdown-submenu-parent.is-right-arrow > a::after {
+         border-width: 4px;
+         margin-left: 5px;
+         margin-top: 5px;
+      }
+   }
+}
+
+//Fix for dropdown menu z-index
+.is-dropdown-submenu {
+	z-index: 2;
+}
+
+
+// Main Section
+// ---------------
+
+main {
+   margin-top: 1em;
+   .large-9 { padding-right: 30px !important; }
+   @media (max-width: 1200px) {
+      padding: 1em;
+   }
+}
+
+
+// Footer Section
+// ---------------
+footer {
+    margin-top: 5em;
+    font-family: 'Roboto', sans-serif;
+    color: $nav-bg-color;
+    border-top: solid 1px darken($footer-bg-color, 10%);
+    // Top Footer Section:
+    .footer-top {
+        width: 100%;
+        background: $footer-bg-color;
+        padding: 2em 0 1em 0;
+    }
+    .footer-links {
+        margin-left: 0;
+        list-style: none;
+        li {
+            font-size: .9rem;
+            a { color: $nav-bg-color; text-decoration: underline; &:hover { color: $black; } }
+        }
+    }
+    // Middle Footer Section
+    .footer-middle {
+        background: $caes-dark-gray;
+        .footer-buttons {
+            margin: 0;
+            li {
+                display: inline-block;
+            }
+            li a {
+                color: $white;
+                text-decoration: none;
+                display: block;
+                height: 4em;
+                padding: 1em 1em 1em 0;
+                font-size: .9rem;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .copyright-text {
+        font-size: .9rem;
+        margin-top: .5em;
+    }
+}
+
+
+// Side Nav
+//---------
+
+// Variables:
+$parent-bg-color: #f7f7f7;
+$sibling-border-color: #e2e2e2;
+$sibiling-hover-bg-color: $parent-bg-color;
+$active-bg-color: $sibling-border-color;
+$children-bg-color: #f4f4f4;
+$children-hover-bg-color: lighten($children-bg-color, 2%);
+
+// Side Nav Column Container
+.side-nav-container {
+    // Removes default column margin on large screens
+    // @include breakpoint(large up) {
+    //     margin-right: -15px;
+    // }
+}
+
+.side-nav {
+   ul {
+      list-style: none;
+      margin-left: 0;
+   }
+   ul li a {
+      line-height: 1em;
+      padding: 1em;
+      display: block;
+      border-bottom: 1px solid $sibling-border-color;
+      font-size: .9em;
+      // Hover
+      &:hover {
+         background: $sibiling-hover-bg-color;
+      }
+   }
+   // Parent
+   .parent {
+      background: $parent-bg-color;
+      font-weight: bold;
+      font-size: 1em;
+      border-bottom: 2px solid $caes-red;
+   }
+   // Active
+   .active {
+      background: $active-bg-color;
+      color: $caes-dark-gray;
+      font-weight: bold;
+      // Hover
+      &:hover {
+         background: $active-bg-color;
+      }
+   }
+   // Has More (Children)
+   .has-more::after {
+      content: "\25b8";
+      float: right;
+      font-size: 1.1em;
+   }
+   .has-more-expanded {
+      &::after {
+         content: "\25be";
+         float: right;
+         font-size: 1.1em;
+      }
+   }
+   // Children
+   .children {
+      margin: 0;
+      background: $children-bg-color;
+      border-bottom: 2px solid $sibling-border-color;
+      li a:hover {
+         background: $children-hover-bg-color;
+      }
+   }
+}
